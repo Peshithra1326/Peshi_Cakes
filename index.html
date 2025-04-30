@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Delights | Artisan Cake Shop</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#e9b7ce',secondary:'#8a4a5c'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, .serif {
+font-family: 'Playfair Display', serif;
+}
+.cursive {
+font-family: 'Pacifico', cursive;
+}
+.category-scroll::-webkit-scrollbar {
+height: 6px;
+}
+.category-scroll::-webkit-scrollbar-track {
+background: #f9f9f9;
+border-radius: 20px;
+}
+.category-scroll::-webkit-scrollbar-thumb {
+background: #e9b7ce;
+border-radius: 20px;
+}
+.product-card:hover {
+transform: translateY(-5px);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.review-slider {
+scroll-snap-type: x mandatory;
+}
+.review-slide {
+scroll-snap-align: start;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #e9b7ce;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+width: 100%;
+}
+.custom-checkbox {
+position: relative;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 20px;
+width: 20px;
+background-color: #fff;
+border: 2px solid #e9b7ce;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #f9f0f4;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #e9b7ce;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.from-white{
+    --tw-gradient-from: #bababa var(--tw-gradient-from-position);
+
+}
+</style>
+</head>
+<body class="bg-[#fffcfd]">
+<!-- Header -->
+<header class="fixed w-full z-50 transition-all duration-300 bg-white bg-opacity-95 shadow-sm">
+<div class="container mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="font-['Pacifico'] text-3xl text-primary">peshi</a>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="nav-link active text-gray-800 hover:text-primary transition-colors">Home</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">Our Cakes</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">Custom Orders</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">About Us</a>
+<a href="#" class="nav-link text-gray-800 hover:text-primary transition-colors">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors">
+<i class="ri-search-line ri-lg"></i>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary transition-colors relative">
+<i class="ri-shopping-bag-line ri-lg"></i>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Banner -->
+<section class="relative min-h-screen flex items-center pt-20" style="background-image: url('https://readdy.ai/api/search-image?query=A%20stunning%20artisanal%20cake%20display%20in%20a%20modern%2C%20bright%20setting.%20The%20scene%20features%20an%20exquisite%20selection%20of%20beautifully%20decorated%20cakes%20with%20delicate%20floral%20details%20and%20gold%20accents.%20The%20composition%20includes%20elegant%20pastries%20and%20macarons%20arranged%20on%20marble%20stands.%20The%20left%20side%20has%20a%20clean%2C%20light-colored%20gradient%20area%20perfect%20for%20text%20overlay.%20The%20lighting%20is%20soft%20and%20natural%2C%20creating%20an%20inviting%20atmosphere.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field%20and%20high-end%20styling.&width=1920&height=1080&seq=cake10&orientation=landscape'); background-size: cover; background-position: center right;">
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
+<div class="container mx-auto px-6 z-10 w-full">
+<div class="max-w-xl">
+<h5 class="cursive text-secondary text-2xl mb-2">Artisan Bakery</h5>
+<h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Exquisite Cakes for <span class="text-primary">Special Moments</span></h1>
+<p class="text-gray-700 text-lg mb-8">Indulge in our handcrafted cakes made with premium ingredients and meticulous attention to detail. Every bite tells a story of passion and artistry.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#featured" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap flex items-center justify-center">
+Order Now
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+<a href="#about" class="border-2 border-gray-300 text-gray-700 px-8 py-3 rounded-button font-medium hover:border-primary hover:text-primary transition-all whitespace-nowrap flex items-center justify-center">
+Our Story
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products -->
+<section id="featured" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h5 class="cursive text-primary text-xl mb-2">Delicious Creations</h5>
+<h2 class="text-4xl font-bold mb-4">Our Signature Cakes</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Discover our most beloved creations, each one meticulously crafted to perfection. From classic flavors to innovative combinations, there's something for every palate.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Product 1 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20close-up%20of%20a%20luxurious%20chocolate%20cake%20with%20multiple%20layers%2C%20topped%20with%20chocolate%20ganache%20dripping%20down%20the%20sides.%20The%20cake%20is%20decorated%20with%20fresh%20berries%20and%20chocolate%20shavings.%20The%20background%20is%20clean%20and%20minimal%2C%20focusing%20on%20the%20rich%20texture%20and%20glossy%20finish%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake2&orientation=portrait" alt="Chocolate Decadence Cake" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-semibold">Chocolate Decadence</h3>
+<span class="text-primary font-semibold">$48.95</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Rich chocolate layers with ganache filling and fresh berries</p>
+<button class="w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition-colors py-2 rounded-button font-medium whitespace-nowrap">Add to Cart</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20beautifully%20crafted%20vanilla%20cake%20with%20strawberry%20filling%2C%20decorated%20with%20fresh%20strawberries%20and%20white%20cream%20frosting.%20The%20cake%20has%20multiple%20layers%20visible%20from%20the%20side%20cut.%20The%20background%20is%20clean%20and%20minimal%2C%20with%20soft%20lighting%20highlighting%20the%20delicate%20texture%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake3&orientation=portrait" alt="Strawberry Bliss Cake" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-semibold">Strawberry Bliss</h3>
+<span class="text-primary font-semibold">$45.95</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Vanilla sponge with fresh strawberry filling and cream frosting</p>
+<button class="w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition-colors py-2 rounded-button font-medium whitespace-nowrap">Add to Cart</button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20sophisticated%20red%20velvet%20cake%20with%20cream%20cheese%20frosting%2C%20elegantly%20decorated%20with%20red%20rose%20petals%20and%20gold%20accents.%20The%20cake%20has%20multiple%20layers%20visible%20from%20the%20side%20cut.%20The%20background%20is%20clean%20and%20minimal%2C%20with%20soft%20lighting%20highlighting%20the%20vibrant%20red%20color%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake4&orientation=portrait" alt="Red Velvet Dream Cake" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-semibold">Red Velvet Dream</h3>
+<span class="text-primary font-semibold">$52.95</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Classic red velvet with cream cheese frosting and elegant decorations</p>
+<button class="w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition-colors py-2 rounded-button font-medium whitespace-nowrap">Add to Cart</button>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20delicate%20lemon%20cake%20with%20blueberry%20filling%2C%20topped%20with%20lemon%20zest%20and%20fresh%20blueberries.%20The%20cake%20has%20a%20light%2C%20airy%20texture%20with%20multiple%20layers%20visible%20from%20the%20side%20cut.%20The%20background%20is%20clean%20and%20minimal%2C%20with%20bright%20lighting%20highlighting%20the%20vibrant%20colors%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake5&orientation=portrait" alt="Lemon Blueberry Delight Cake" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-2">
+<h3 class="text-xl font-semibold">Lemon Blueberry</h3>
+<span class="text-primary font-semibold">$46.95</span>
+</div>
+<p class="text-gray-600 text-sm mb-4">Zesty lemon cake with blueberry compote and lemon buttercream</p>
+<button class="w-full bg-white border border-primary text-primary hover:bg-primary hover:text-white transition-colors py-2 rounded-button font-medium whitespace-nowrap">Add to Cart</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">View All Cakes</a>
+</div>
+</div>
+</section>
+<!-- Special Categories -->
+<section class="py-16 bg-[#fdf8fa]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-10">
+<h5 class="cursive text-primary text-xl mb-2">Explore Our Collections</h5>
+<h2 class="text-4xl font-bold mb-4">Special Categories</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">From elegant wedding cakes to playful birthday creations, we craft the perfect centerpiece for your celebration.</p>
+</div>
+<div class="category-scroll flex overflow-x-auto pb-6 space-x-6">
+<!-- Wedding Cakes -->
+<div class="min-w-[280px] flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-white">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=An%20elegant%20multi-tiered%20wedding%20cake%20with%20white%20fondant%2C%20decorated%20with%20delicate%20sugar%20flowers%20cascading%20down%20the%20side.%20The%20cake%20stands%20on%20a%20silver%20cake%20stand%20against%20a%20soft%2C%20neutral%20background.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field%2C%20focusing%20on%20the%20intricate%20details%20of%20the%20cake%20decorations.&width=600&height=800&seq=cake6&orientation=portrait" alt="Wedding Cakes" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5 text-center">
+<h3 class="text-xl font-semibold mb-2">Wedding Cakes</h3>
+<p class="text-gray-600 text-sm mb-4">Elegant tiered creations for your special day</p>
+<a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+Explore Collection
+<i class="ri-arrow-right-s-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Birthday Cakes -->
+<div class="min-w-[280px] flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-white">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20colorful%20birthday%20cake%20with%20festive%20decorations%2C%20sprinkles%2C%20and%20candles%20on%20top.%20The%20cake%20has%20multiple%20layers%20with%20colorful%20frosting%20between%20them.%20The%20background%20is%20clean%20and%20minimal%2C%20with%20bright%20lighting%20highlighting%20the%20vibrant%20colors%20and%20playful%20design%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake7&orientation=portrait" alt="Birthday Cakes" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5 text-center">
+<h3 class="text-xl font-semibold mb-2">Birthday Cakes</h3>
+<p class="text-gray-600 text-sm mb-4">Festive creations to make your celebration memorable</p>
+<a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+Explore Collection
+<i class="ri-arrow-right-s-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Custom Cakes -->
+<div class="min-w-[280px] flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-white">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20unique%20custom-designed%20cake%20with%20artistic%20elements%20and%20personalized%20decorations.%20The%20cake%20has%20an%20unusual%20shape%20and%20creative%20design%20elements.%20The%20background%20is%20clean%20and%20minimal%2C%20with%20soft%20lighting%20highlighting%20the%20artistic%20details%20and%20craftsmanship%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake8&orientation=portrait" alt="Custom Cakes" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5 text-center">
+<h3 class="text-xl font-semibold mb-2">Custom Cakes</h3>
+<p class="text-gray-600 text-sm mb-4">Personalized designs tailored to your vision</p>
+<a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+Explore Collection
+<i class="ri-arrow-right-s-line ml-1"></i>
+</a>
+</div>
+</div>
+<!-- Seasonal Specials -->
+<div class="min-w-[280px] flex-shrink-0 rounded-lg overflow-hidden shadow-md bg-white">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20seasonal%20themed%20cake%20with%20decorations%20reflecting%20a%20particular%20holiday%20or%20time%20of%20year%20%28like%20autumn%20or%20Christmas%29.%20The%20cake%20has%20seasonal%20elements%20like%20themed%20toppers%20or%20seasonal%20fruits.%20The%20background%20is%20clean%20and%20minimal%2C%20with%20warm%20lighting%20highlighting%20the%20seasonal%20elements%20and%20festive%20nature%20of%20the%20cake.%20Professional%20food%20photography%20with%20shallow%20depth%20of%20field.&width=600&height=800&seq=cake9&orientation=portrait" alt="Seasonal Specials" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-5 text-center">
+<h3 class="text-xl font-semibold mb-2">Seasonal Specials</h3>
+<p class="text-gray-600 text-sm mb-4">Limited edition flavors inspired by the seasons</p>
+<a href="#" class="text-primary font-medium hover:underline inline-flex items-center">
+Explore Collection
+<i class="ri-arrow-right-s-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Preview -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20female%20pastry%20chef%20in%20a%20clean%20white%20uniform%20working%20in%20an%20elegant%20bakery%20kitchen.%20She%20is%20decorating%20a%20beautiful%20cake%20with%20precision%20and%20artistry.%20The%20kitchen%20is%20bright%20and%20modern%20with%20professional%20baking%20equipment%20visible%20in%20the%20background.%20The%20image%20conveys%20passion%2C%20expertise%2C%20and%20craftsmanship.%20Professional%20photography%20with%20soft%2C%20natural%20lighting.&width=800&height=600&seq=chef1&orientation=landscape" alt="Master Pastry Chef" class="rounded-lg shadow-lg w-full">
+</div>
+<div class="lg:w-1/2">
+<h5 class="cursive text-primary text-xl mb-2">Our Story</h5>
+<h2 class="text-4xl font-bold mb-6">Crafting Sweet Memories Since 2010</h2>
+<p class="text-gray-700 mb-6 leading-relaxed">Welcome to our artisan cake boutique, where passion meets precision in every creation. Founded by Master Pastry Chef Olivia Bennett, our bakery began as a small family business driven by a love for creating edible works of art.</p>
+<p class="text-gray-700 mb-6 leading-relaxed">Each of our cakes is handcrafted using only the finest ingredients - organic eggs, European butter, premium chocolate, and locally sourced seasonal fruits. We believe that exceptional taste comes from exceptional ingredients and meticulous attention to detail.</p>
+<div class="flex items-center mb-8">
+<img src="https://readdy.ai/api/search-image?query=A%20professional%20headshot%20of%20a%20female%20pastry%20chef%20in%20her%2040s%20with%20a%20warm%20smile.%20She%20has%20her%20hair%20neatly%20styled%20and%20is%20wearing%20a%20professional%20chefs%20jacket.%20The%20background%20is%20neutral%20and%20professional.%20The%20image%20is%20cropped%20to%20show%20just%20her%20head%20and%20shoulders.%20Professional%20portrait%20photography%20with%20soft%2C%20flattering%20lighting.&width=200&height=200&seq=chef2&orientation=squarish" alt="Chef Olivia Bennett" class="w-16 h-16 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Olivia Bennett</h4>
+<p class="text-gray-600 text-sm">Master Pastry Chef & Founder</p>
+</div>
+</div>
+<a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap">Read Our Full Story</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Reviews -->
+<section class="py-16 bg-[#fdf8fa]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h5 class="cursive text-primary text-xl mb-2">Happy Customers</h5>
+<h2 class="text-4xl font-bold mb-4">What People Say</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our customers' satisfaction is our greatest achievement. Here's what they have to say about our cakes.</p>
+</div>
+<div class="relative">
+<div class="review-slider flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8 -mx-4">
+<!-- Review 1 -->
+<div class="review-slide min-w-[90%] md:min-w-[45%] lg:min-w-[30%] px-4">
+<div class="bg-white p-8 rounded-lg shadow-md h-full">
+<div class="flex text-primary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-700 mb-6 italic">"The wedding cake exceeded all our expectations! Not only was it visually stunning, but the flavor combinations were absolutely divine. Our guests couldn't stop raving about it!"</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20woman%20in%20her%20early%2030s%20with%20shoulder-length%20brown%20hair%2C%20wearing%20business%20casual%20attire.%20The%20background%20is%20neutral%20and%20clean.%20The%20image%20is%20cropped%20to%20show%20just%20her%20head%20and%20shoulders.%20Professional%20portrait%20photography%20with%20soft%2C%20flattering%20lighting.&width=100&height=100&seq=customer1&orientation=squarish" alt="Emily Richardson" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Emily Richardson</h4>
+<p class="text-gray-500 text-sm">Wedding Client</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="review-slide min-w-[90%] md:min-w-[45%] lg:min-w-[30%] px-4">
+<div class="bg-white p-8 rounded-lg shadow-md h-full">
+<div class="flex text-primary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-700 mb-6 italic">"I ordered a custom birthday cake for my daughter's 5th birthday, and it was absolutely magical! The attention to detail was incredible, and the cake tasted as amazing as it looked. We'll definitely be back!"</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20man%20in%20his%20mid-40s%20with%20short%20dark%20hair%20and%20glasses%2C%20wearing%20a%20casual%20button-up%20shirt.%20The%20background%20is%20neutral%20and%20clean.%20The%20image%20is%20cropped%20to%20show%20just%20his%20head%20and%20shoulders.%20Professional%20portrait%20photography%20with%20soft%2C%20flattering%20lighting.&width=100&height=100&seq=customer2&orientation=squarish" alt="Michael Thompson" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Michael Thompson</h4>
+<p class="text-gray-500 text-sm">Birthday Celebration</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="review-slide min-w-[90%] md:min-w-[45%] lg:min-w-[30%] px-4">
+<div class="bg-white p-8 rounded-lg shadow-md h-full">
+<div class="flex text-primary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-700 mb-6 italic">"As a regular customer, I can confidently say that this bakery consistently delivers excellence. Their Chocolate Decadence cake is my absolute favorite - rich, moist, and perfectly balanced. Simply the best in town!"</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20woman%20in%20her%20late%2020s%20with%20curly%20hair%2C%20wearing%20a%20casual%20blouse.%20The%20background%20is%20neutral%20and%20clean.%20The%20image%20is%20cropped%20to%20show%20just%20her%20head%20and%20shoulders.%20Professional%20portrait%20photography%20with%20soft%2C%20flattering%20lighting.&width=100&height=100&seq=customer3&orientation=squarish" alt="Sophia Martinez" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Sophia Martinez</h4>
+<p class="text-gray-500 text-sm">Regular Customer</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Review 4 -->
+<div class="review-slide min-w-[90%] md:min-w-[45%] lg:min-w-[30%] px-4">
+<div class="bg-white p-8 rounded-lg shadow-md h-full">
+<div class="flex text-primary mb-4">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-700 mb-6 italic">"I ordered a cake for our corporate event, and it was a showstopper! Not only was it visually impressive, but the taste was exceptional. The team was professional and accommodating with our specific requests."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20man%20in%20his%2050s%20with%20salt%20and%20pepper%20hair%2C%20wearing%20a%20business%20suit.%20The%20background%20is%20neutral%20and%20clean.%20The%20image%20is%20cropped%20to%20show%20just%20his%20head%20and%20shoulders.%20Professional%20portrait%20photography%20with%20soft%2C%20flattering%20lighting.&width=100&height=100&seq=customer4&orientation=squarish" alt="Robert Chen" class="w-12 h-12 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Robert Chen</h4>
+<p class="text-gray-500 text-sm">Corporate Client</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8 space-x-2">
+<button class="w-3 h-3 rounded-full bg-primary"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-16 bg-primary bg-opacity-10">
+<div class="container mx-auto px-6">
+<div class="max-w-3xl mx-auto text-center">
+<h5 class="cursive text-secondary text-xl mb-2">Stay Updated</h5>
+<h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+<p class="text-gray-700 mb-8">Be the first to know about seasonal specials, new flavors, and exclusive offers.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+<input type="email" placeholder="Your email address" class="flex-grow px-5 py-3 rounded-button border-none focus:ring-2 focus:ring-primary outline-none text-gray-700 bg-white shadow-sm">
+<button type="submit" class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors shadow-md whitespace-nowrap">Subscribe</button>
+</form>
+<div class="mt-6 flex items-center justify-center">
+<label class="custom-checkbox flex items-center text-sm text-gray-600 pl-7">
+<input type="checkbox" class="sr-only">
+<span class="checkmark"></span>
+I agree to receive marketing emails and can unsubscribe anytime
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="font-['Pacifico'] text-3xl text-primary block mb-4">peshi</a>
+<p class="text-gray-600 mb-6">Artisan cakes crafted with passion and precision for life's sweetest moments.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary hover:bg-opacity-20 transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary hover:bg-opacity-20 transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary hover:bg-opacity-20 transition-colors">
+<i class="ri-pinterest-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary bg-opacity-10 text-primary hover:bg-opacity-20 transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Our Cakes</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Custom Orders</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-600 hover:text-primary transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-1 mr-3">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-600">123 Bakery Lane, Sweet Town,India</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-600">9807654123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-3">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-600">info@sweetdelights.com</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-6">Business Hours</h3>
+<ul class="space-y-3">
+<li class="flex justify-between">
+<span class="text-gray-600">Monday - Friday:</span>
+<span class="text-gray-800 font-medium">8:00 AM - 6:00 PM</span>
+</li>
+<li class="flex justify-between">
+<span class="text-gray-600">Saturday:</span>
+<span class="text-gray-800 font-medium">9:00 AM - 5:00 PM</span>
+</li>
+<li class="flex justify-between">
+<span class="text-gray-600">Sunday:</span>
+<span class="text-gray-800 font-medium">10:00 AM - 4:00 PM</span>
+</li>
+</ul>
+<h3 class="text-lg font-semibold mt-8 mb-4">We Accept</h3>
+<div class="flex space-x-3">
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-visa-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-mastercard-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-paypal-fill ri-lg"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center text-gray-600">
+<i class="ri-apple-fill ri-lg"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-600 text-sm mb-4 md:mb-0">© 2025 Sweet Delights. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-600 text-sm hover:text-primary transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-600 text-sm hover:text-primary transition-colors">Terms of Service</a>
+<a href="#" class="text-gray-600 text-sm hover:text-primary transition-colors">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Header scroll effect
+const header = document.querySelector('header');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.classList.add('shadow-md');
+header.classList.remove('bg-opacity-95');
+} else {
+header.classList.remove('shadow-md');
+header.classList.add('bg-opacity-95');
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Custom checkbox functionality
+const checkboxes = document.querySelectorAll('.custom-checkbox input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('change', function() {
+const checkmark = this.nextElementSibling;
+if (this.checked) {
+checkmark.classList.add('bg-primary');
+} else {
+checkmark.classList.remove('bg-primary');
+}
+});
+});
+});
+</script>
+</body>
+</html>
